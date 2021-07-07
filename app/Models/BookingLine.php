@@ -5,17 +5,18 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Booking extends Model
+class BookingLine extends Model
 {
     use HasFactory;
 
     protected $fillable = [
-        'arrival_at',
-        'departure_at'
+        'booking_id',
+        'parking_space_type_id',
+        'persons_count'
     ];
 
-    public function bookingLines()
+    public function booking()
     {
-        return $this->hasMany(BookingLine::class);
+        return $this->belongsTo(Booking::class);
     }
 }

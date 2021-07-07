@@ -2,7 +2,9 @@
 
 namespace Database\Seeders;
 
+use App\Models\Booking;
 use Illuminate\Database\Seeder;
+use App\Models\ParkingSpaceType;
 
 class DatabaseSeeder extends Seeder
 {
@@ -13,8 +15,10 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        \App\Models\ParkingSpaceType::factory(2)->create();
-        \App\Models\Booking::factory(200)->create();
-        // \App\Models\ParkingSpaceType::factory(2)->create();
+        ParkingSpaceType::factory(2)->create();
+        Booking::factory()
+            ->times(200)
+            ->hasBookingLines(2)
+            ->create();
     }
 }
