@@ -14,5 +14,7 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         \App\Models\ParkingSpaceType::factory(2)->create();
+        \App\Models\Booking::factory(200)->create();
+        // \App\Models\ParkingSpaceType::factory(2)->create();
     }
 }
