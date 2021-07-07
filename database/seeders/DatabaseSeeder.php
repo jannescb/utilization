@@ -17,8 +17,8 @@ class DatabaseSeeder extends Seeder
     {
         ParkingSpaceType::factory(2)->create();
         Booking::factory()
-            ->times(200)
-            ->hasBookingLines(2)
+            ->times(5000)
+            ->hasBookingLines(3)
             ->create();
     }
 }
